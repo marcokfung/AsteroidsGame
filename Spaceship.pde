@@ -1,5 +1,6 @@
 class Spaceship extends Floater  
 {   
+
   public Spaceship(){
    corners = 3;  //the number of corners, a triangular floater has 3   
    xCorners = new int[corners];
@@ -15,6 +16,13 @@ class Spaceship extends Floater
    myCenterY = 200; //holds center coordinates   
    myXspeed = 0;
    myYspeed = 0; //holds the speed of travel in the x and y directions   
-   myPointDirection = 0; //holds current direction the ship is pointing in degrees   
-    }
+   myPointDirection = 0; //holds current direction the ship is pointing in degrees
+  
   }
+     public int getX(){
+     return (int)myCenterX;
+    }
+    public int getY(){
+    return (int)myCenterY;
+   }
+}
