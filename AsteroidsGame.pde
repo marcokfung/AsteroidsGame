@@ -29,6 +29,12 @@ public void draw()
     alex.get(i).show();
     alex.get(i).move();
   }
+  for(int i = 0; i<alex.size(); i++){
+   if(dist((float)bob.getX(), (float)bob.getY(), (float)alex.get(i).getX(), (float)alex.get(i).getY())<20){
+    alex.remove(i);
+    alex.add(new Asteroid());
+   }
+  }
 }
 
 public void keyPressed(){
