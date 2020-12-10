@@ -1,5 +1,6 @@
 //your variable declarations here
 ArrayList<Asteroid> alex = new ArrayList<Asteroid>();
+ArrayList<Bullet> bill = new ArrayList<Bullet>();
 Spaceship bob = new Spaceship();
 Star[] sue = new Star[500];
 public void setup() 
@@ -35,7 +36,24 @@ public void draw()
     alex.add(new Asteroid());
    }
   }
+  for(int i = 0; i < bill.size(); i++){
+    bill.get(i).move();
+    bill.get(i).show();
+  }
+   for(int i = 0; i < alex.size(); i++){
+    for(int j = 0; j < bill.size(); j++) {
+    if(dist((float)bill.get(j).getX(), (float)bill.get(j).getY(), (float)alex.get(i).getX(), (float)alex.get(i).getY())<20){
+      alex.remove(i);
+      bill.remove(j);
+      alex.add(new Asteroid());
+      break;
+    }
+  }
+  }
 }
+
+
+
 
 public void keyPressed(){
   if(key == 'w'){
@@ -54,5 +72,8 @@ public void keyPressed(){
    bob.turn((double)(Math.random()*360)); 
    bob.myXspeed = 0;
    bob.myYspeed = 0;
+  }
+  if(key==' '){
+    bill.add(new Bullet(bob));
   }
   }
