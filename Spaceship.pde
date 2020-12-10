@@ -19,10 +19,24 @@ class Spaceship extends Floater
    myPointDirection = 0; //holds current direction the ship is pointing in degrees
   
   }
-     public int getX(){
-     return (int)myCenterX;
+   public double getX(){
+     return myCenterX;
     }
-    public int getY(){
-    return (int)myCenterY;
+    
+    public double  getY(){
+    return myCenterY;
    }
+   
+   public double getSpeedX(){
+    return myXspeed;
+   }
+   
+    public double getSpeedY(){
+    return myYspeed;
+}
+
+public double getPointDirection(){
+  return myPointDirection;
+}
+
 }
