@@ -43,7 +43,7 @@ public void move()
 }
 
 public double getPointDirection(){
-  return (double)myPointDirection;
+  return myPointDirection;
 }
 
  
